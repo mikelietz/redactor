@@ -35,10 +35,7 @@ REDACTOR_INIT_JS;
 	 */
 	public function action_form_publish( $form, $post )
 	{
-		$key = array_search( 'check-change', $form->content->class );
-		if ( $key !== FALSE ) {
-			unset( $form->content->class[ $key ] );
-		}
+		$form->content->class = array_diff($form->content->class, array('resizable', 'check-change'));
 	}
 }
 ?>
