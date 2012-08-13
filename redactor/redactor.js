@@ -380,6 +380,7 @@ var RTOOLBAR = {};
 		insertHtml: function(html)
 		{
 			this.execCommand('inserthtml', html);
+			this.observeImages();
 		},
 		destroy: function()
 		{

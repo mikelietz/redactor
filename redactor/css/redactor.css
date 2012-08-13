@@ -51,7 +51,7 @@ body .redactor_box_fullscreen {
 */
 .redactor_toolbar {
 	position: relative;
-	z-index: 2002;
+	z-index: auto;
 	height: 33px;
 	left: 0;
 	top: 0;
