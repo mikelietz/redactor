@@ -4,7 +4,7 @@
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
 	<license url="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</license>
 	<url>http://redactorjs.com/</url>
-	<author url="http://mikelietz.org/code/">Mike Lietz</author>
+	<author url="http://mikelietz.org/">Mike Lietz</author>
 	<version>1.0</version>
 	<description><![CDATA[Redactor javascript editing for Habari posts.]]></description>
 	<copyright>2012</copyright>
@@ -12,4 +12,3 @@
 	<help><value><![CDATA[<p>Once activated, this plugin replaces the "Content" textarea of the post publish form with a WYSIWYG editor.</p><p>Redactor is licensed for non-commercial usage. To license Redactor for commercial sites, <a href="http://redactorjs.com/download/">contact the developer</a>.</p>
 	]]></value></help>
 </pluggable>
-
