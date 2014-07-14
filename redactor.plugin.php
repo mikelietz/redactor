@@ -12,7 +12,16 @@ class Redactor extends Plugin {
 			Stack::add( 'admin_header_javascript', $this->get_url() . '/redactor/redactor.min.js', 'redactor', 'jquery' );
 			Stack::add( 'admin_stylesheet', array( $this->get_url() . '/redactor/css/redactor.css', 'screen' ), 'redactor', 'admin-css' );
 
-			$js = "$(document).ready( function(){ $('#content').redactor(); });";
+			$js = <<< REDACTOR_INIT_JS
+$(document).ready( function(){
+	$('#content').redactor();
+	habari.editor = {
+		insertSelection: function(value) {
+			$('#content').insertHtml(value);
+		}
+	}
+});
+REDACTOR_INIT_JS;
 			Stack::add( 'admin_header_javascript', $js, 'redactor_init', 'redactor' );
 		}
 	}
@@ -26,10 +35,7 @@ class Redactor extends Plugin {
 	 */
 	public function action_form_publish( $form, $post )
 	{
-		$key = array_search( 'check-change', $form->content->class );
-		if ( $key !== FALSE ) {
-			unset( $form->content->class[ $key ] );
-		}
+		$form->content->class = array_diff($form->content->class, array('resizable', 'check-change'));
 	}
 }
 ?>
